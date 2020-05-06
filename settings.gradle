@@ -1,0 +1,2 @@
+rootProject.name='Public Helper'
+include ':app'
