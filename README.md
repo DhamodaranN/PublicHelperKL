@@ -8,7 +8,7 @@ Register:
 ![Alt text](https://github.com/DhamodaranN/PublicHelper/blob/master/20200507_054504.png?raw=true "Register")
 
 Login: 
-![Alt text](https://github.com/DhamodaranN/PublicHelper/blob/master/20200507_054459.png?raw=true "Login)
+![Alt text](https://github.com/DhamodaranN/PublicHelper/blob/master/20200507_054459.png?raw=true "Login")
 
 Doctor Appoinment:
 ![Alt text](https://github.com/DhamodaranN/PublicHelper/blob/master/20200507_054553.png?raw=true "Doctor Appoinment")
