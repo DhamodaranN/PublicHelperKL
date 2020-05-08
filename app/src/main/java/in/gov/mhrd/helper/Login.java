@@ -15,7 +15,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void signuptxt(View view) {
-        Intent intent = new Intent(Login.this,Register.class);
+        Intent intent = new Intent(Login.this,UserDashboard.class);
         startActivity(intent);
     }
 

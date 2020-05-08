@@ -28,6 +28,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
     CountryCodePicker ccp;
     Spinner spinner;
+    String type;
 
     EditText username,phone,geotag,password,confirmpassword;
     String str_name,str_phone,str_password,str_geotag,str_confirmpass,str_status;
@@ -38,26 +39,51 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         ccp = findViewById(R.id.ccp);
+        type=getIntent().getStringExtra("type");
+        if(type.equals("health"))
+        {
+
+        }
+        else if(type.equals("volunteer"))
+        {
+
+        }
+        else if(type.equals("patient"))
+        {
+
+        }
+        else if(type.equals("people"))
+        {
+
+        }
+        else if(type.equals("migrant"))
+        {
+
+        }
+        else if(type.equals("admin"))
+        {
+
+        }
+
+
 
         phone = findViewById(R.id.phone);
         username = findViewById(R.id.username);
         password = findViewById(R.id.regpass);
         confirmpassword = findViewById(R.id.regconpass);
-        geotag = findViewById(R.id.geotag);
 
 
-         spinner = (Spinner) findViewById(R.id.status);
+         spinner = (Spinner) findViewById(R.id.gender);
+
 
         // Spinner Drop down elements
-        List<String> status = new ArrayList<String>();
-        status.add("Select Any");
-        status.add("Citizen");
-        status.add("Volunteer");
-        status.add("Doctor");
-        status.add("Health Worker");
-        status.add("Essential Worker");
+        List<String> gender = new ArrayList<String>();
+        gender.add("Select Any");
+        gender.add("Male");
+        gender.add("Female");
+        gender.add("Others");
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, status);
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gender);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
     }
