@@ -4,19 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:background="#E6E5E5"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
+
     <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <GridLayout
             android:columnCount="3"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:rowCount="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -32,7 +35,7 @@
 
                 >
                 <LinearLayout
-                    android:background="#ff"
+                    android:background="#fff"
                     android:gravity="center"
                     android:padding="0dp"
                     android:orientation="vertical"
@@ -68,7 +71,7 @@
 
                 >
                 <LinearLayout
-                    android:background="#ff"
+                    android:background="#fff"
                     android:gravity="center"
                     android:padding="0dp"
                     android:orientation="vertical"
@@ -104,7 +107,7 @@
 
                 >
                 <LinearLayout
-                    android:background="#ff"
+                    android:background="#fff"
                     android:gravity="center"
                     android:padding="0dp"
                     android:orientation="vertical"
@@ -140,7 +143,7 @@
 
                 >
                 <LinearLayout
-                    android:background="#ff"
+                    android:background="#fff"
                     android:gravity="center"
                     android:padding="0dp"
                     android:orientation="vertical"
@@ -175,7 +178,7 @@
 
                 >
                 <LinearLayout
-                    android:background="#ff"
+                    android:background="#fff"
                     android:gravity="center"
                     android:padding="0dp"
                     android:orientation="vertical"
