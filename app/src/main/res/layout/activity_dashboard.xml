@@ -108,7 +108,13 @@
             android:layout_height="75dp"
             android:src="@drawable/volunteer"
             android:onClick="volunteerReg"
-            />
+            />  <ImageView
+        android:layout_marginRight="10dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/volunteer"
+        android:onClick="donationlayout"
+        />
 
     </LinearLayout> <LinearLayout
     android:layout_width="match_parent"
@@ -123,7 +129,14 @@
         android:text="\tVolunteer\nRegistration"
         android:layout_marginLeft="0dp"
         android:textStyle="bold"
-        />
+        />   <TextView
+    android:onClick="donationlayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="\tDonation"
+    android:layout_marginLeft="0dp"
+    android:textStyle="bold"
+    />
 </LinearLayout>
 
 </LinearLayout>
