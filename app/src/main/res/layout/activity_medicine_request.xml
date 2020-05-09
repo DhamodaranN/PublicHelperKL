@@ -81,12 +81,42 @@
 
     </RelativeLayout>
     <EditText
-        android:padding="20dp"
-        android:layout_margin="20dp"
-        android:lines="4"
+        android:padding="2dp"
+        android:layout_margin="2dp"
+        android:lines="2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Medicine Required"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hand sanitizer"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gloves"/>
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tissue"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:text="Get" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="203dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/help" />
 
 
 </LinearLayout>

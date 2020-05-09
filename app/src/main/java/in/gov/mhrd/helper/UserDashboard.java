@@ -22,4 +22,7 @@ public class UserDashboard extends AppCompatActivity {
       startActivity(i);
 
     }
+
+    public void donate(View view) {
+    }
 }
