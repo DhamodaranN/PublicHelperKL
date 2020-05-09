@@ -31,28 +31,6 @@
             android:src="@drawable/help"
             />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            >
-
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Register"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"
-
-
-
-                />
-        </RelativeLayout>
-
-
 
         <EditText
             android:id="@+id/username"
@@ -65,9 +43,15 @@
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
-            android:inputType="textEmailAddress"
+            android:hint="Age"
+            android:inputType="numberDecimal"
             android:layout_marginTop="10dp"/>
+        <Spinner
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender"
+            />
 
 
 
@@ -101,43 +85,48 @@
 
 
         <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
+            android:id="@+id/personallocation"
+            android:layout_width="319dp"
             android:layout_height="wrap_content"
-            android:hint="Gender"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="0dp"
+            android:text="Address in Kerala"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:layout_marginStart="0dp" />
 
-        <LinearLayout
+        <Spinner
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/district"
+            />
+        <Spinner
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taluk"
+            />
+
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="male"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="female"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="others"/>
-
-
-
-
-        </LinearLayout>
-
-
+            android:hint="City/Village" />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PinCode"
+            android:inputType="number"/>
         <EditText
             android:layout_marginTop="10dp"
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Adhar Number"
+            android:hint="Address"
             android:inputType="number"/>
 
 
@@ -171,19 +160,9 @@
             android:textSize="20dp"
             android:layout_marginTop="32dp"
             android:padding="15dp"
+            android:onClick="register"
             android:text="Register"
             />
-
-        <TextView
-            android:id="@+id/logintxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="25dp"/>
 
     </LinearLayout>
 
