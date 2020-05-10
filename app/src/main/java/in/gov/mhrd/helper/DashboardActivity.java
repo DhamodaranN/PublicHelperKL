@@ -36,8 +36,9 @@ public class DashboardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void volunteerReg(View view) {
-        Intent intent = new Intent(DashboardActivity.this,VolunteerReg.class);
+
+    public void virus(View view) {
+        Intent intent = new Intent(DashboardActivity.this,CoronaActivity.class);
         startActivity(intent);
     }
 }

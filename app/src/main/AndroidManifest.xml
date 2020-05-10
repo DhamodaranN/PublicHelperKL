@@ -12,7 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserDashboard"></activity>
+        <activity android:name=".foodActivity"></activity>
+        <activity android:name=".FundActivity" />
+        <activity
+            android:name=".DistrictDataActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".StateDataActivity" />
+        </activity>
+        <activity
+            android:name=".StateDataActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CoronaActivity" />
+        </activity>
+        <activity android:name=".CoronaActivity" />
+        <activity android:name=".Admin" />
+        <activity android:name=".Fundraisers" />
+        <activity android:name=".ReturnKerala" />
+        <activity android:name=".MigrantWorker" />
+        <activity android:name=".People" />
+        <activity android:name=".Patient" />
+        <activity android:name=".HealthWorker" />
+        <activity android:name=".UserDashboard" />
         <activity android:name=".Home" />
         <activity android:name=".MedicineRequest" />
         <activity android:name=".VolunteerProfile" />
