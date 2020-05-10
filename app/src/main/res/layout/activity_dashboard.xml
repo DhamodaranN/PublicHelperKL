@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="#E6E5E5"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
@@ -18,8 +17,6 @@
 
         <GridLayout
             android:columnCount="3"
-            android:layout_gravity="center"
-            android:gravity="center"
             android:rowCount="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -27,6 +24,7 @@
             <androidx.cardview.widget.CardView
                 android:onClick="toolfree"
                 android:layout_width="100dp"
+                android:layout_gravity="center"
                 android:layout_height="100dp"
                 app:cardElevation="12dp"
                 android:background="#fff"
@@ -195,6 +193,78 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="medicine "
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#6f6f6f" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="12dp"
+                android:background="#fff"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="12dp"
+
+                >
+                <LinearLayout
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/cash_in_hand_50px"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Fund "
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#6f6f6f" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:onClick="medreq"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardElevation="12dp"
+                android:background="#fff"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="12dp"
+
+                >
+                <LinearLayout
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:src="@drawable/receive_cash_50px"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"/>
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Donate"
                         android:textSize="15sp"
                         android:textStyle="bold"
                         android:textColor="#6f6f6f" />

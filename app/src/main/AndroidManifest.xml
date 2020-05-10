@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".foodActivity"></activity>
+        <activity android:name=".FundActivity" />
         <activity
             android:name=".DistrictDataActivity"
             android:launchMode="singleTop">
