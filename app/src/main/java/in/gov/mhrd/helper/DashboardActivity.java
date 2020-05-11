@@ -41,4 +41,10 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this,CoronaActivity.class);
         startActivity(intent);
     }
+
+    public void hospitals(View view) {
+        Intent intent = new Intent(DashboardActivity.this,MapsActivity.class);
+        startActivity(intent);
+    }
+
 }
