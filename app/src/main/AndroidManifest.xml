@@ -3,7 +3,7 @@
     package="in.gov.mhrd.helper">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <application
         android:name=".AppController"
         android:allowBackup="true"
@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".foodActivity"></activity>
+        <activity android:name=".foodActivity" />
         <activity android:name=".FundActivity" />
         <activity
             android:name=".DistrictDataActivity"
@@ -44,7 +44,6 @@
         <activity android:name=".DoctorAppointment" />
         <activity android:name=".Courses" />
         <activity android:name=".Tollfree" />
-        <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".DashboardActivity" />
         <activity
