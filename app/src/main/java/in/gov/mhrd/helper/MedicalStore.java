@@ -36,7 +36,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.HashMap;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,
+public class MedicalStore extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -49,12 +49,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Location mLastLocation;
     Marker mCurrLocationMarker;
     LocationRequest mLocationRequest;
-    Button btnHospital;
+    Button medicalstore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        btnHospital = (Button) findViewById(R.id.btnHospital);
+        setContentView(R.layout.activity_medical_store);
+        medicalstore = (Button) findViewById(R.id.btnmedicalstore);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
@@ -119,21 +119,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
         }
 
-        Button btnHospital = (Button) findViewById(R.id.btnHospital);
-        btnHospital.setOnClickListener(new View.OnClickListener() {
-            String Hospital = "hospital";
+        Button medicalstore = (Button) findViewById(R.id.btnmedicalstore);
+        medicalstore.setOnClickListener(new View.OnClickListener() {
+            String medical = "pharmacy";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
                 mMap.clear();
-                String url = getUrl(latitude, longitude, Hospital);
+                String url = getUrl(latitude, longitude, medical);
                 Object[] DataTransfer = new Object[2];
                 DataTransfer[0] = mMap;
                 DataTransfer[1] = url;
                 Log.d("onClick", url);
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
-                Toast.makeText(MapsActivity.this,"Nearby Hospitals", Toast.LENGTH_LONG).show();
+                Toast.makeText(MedicalStore.this,"Nearby Medical stores", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -200,12 +200,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
-        Toast.makeText(MapsActivity.this,"Your Current Location", Toast.LENGTH_LONG).show();
+        Toast.makeText(MedicalStore.this,"Your Current Location", Toast.LENGTH_LONG).show();
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                btnHospital.performClick();//Button auto click after 5 seconds
+                medicalstore.performClick();//Button auto click after 5 seconds
             }
         }, 100);
 

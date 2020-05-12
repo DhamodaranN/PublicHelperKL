@@ -9,15 +9,25 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="I want to donate for "
+    android:gravity="center"
+    android:textSize="20dp"
+    android:textStyle="bold"/>
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/fundlist_spinner"/>
 
-
-        </RelativeLayout>
+        </LinearLayout>
         <GridLayout
             android:id="@+id/amountgroup"
             android:columnCount="2"
@@ -139,63 +149,6 @@
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-                >
-                <LinearLayout
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="₹10000"
-                        android:textSize="45sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f"
-                        android:layout_marginTop="12dp"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-                >
-                <LinearLayout
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Others"
-                        android:textColor="#6f6f6f"
-                        android:textSize="45sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
 
 
         </GridLayout>
