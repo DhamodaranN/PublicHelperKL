@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:id="@+id/otplayout"
+    android:contextClickable="true"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    android:background="@drawable/back">
+
+    <TextView
+        android:textColor="#000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter OTP"
+        android:textStyle="bold"
+        android:background="@drawable/back"
+        android:textSize="18sp" />
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:hint="Enter OTP"
+        android:textStyle="bold"
+        android:background="@drawable/edt"
+        android:padding="20dp"/>
+    <TextView
+        android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+    android:text="We have sent OTP to your mobile number."
+    android:textStyle="bold"
+    android:background="@drawable/back"
+    android:textSize="15sp" />
+
+
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:onClick="submitotp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/but"
+        android:id="@+id/submitotp"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+
+</LinearLayout>

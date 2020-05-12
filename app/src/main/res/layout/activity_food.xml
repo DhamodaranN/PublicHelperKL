@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         android:layout_height="wrap_content">
     <TextView
         android:layout_width="wrap_content"
@@ -17,9 +18,10 @@
         android:text="\tI would donate:"
         android:id="@+id/subtitle"
         android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
     <CheckBox
+        android:layout_marginTop="20dp"
         android:id="@+id/item1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
