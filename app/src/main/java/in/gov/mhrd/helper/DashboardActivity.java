@@ -51,4 +51,9 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this,MedicalStore.class);
         startActivity(intent);
     }
+
+    public void addfund(View view) {
+        Intent intent = new Intent(DashboardActivity.this,FundActivity.class);
+        startActivity(intent);
+    }
 }

@@ -203,6 +203,7 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="100dp"
+                android:onClick="addfund"
                 android:layout_height="100dp"
                 app:cardElevation="12dp"
                 android:background="#fff"

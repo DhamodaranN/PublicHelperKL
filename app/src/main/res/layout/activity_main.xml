@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/splash">
 
+    <ImageView
+        android:id="@+id/imageviewkl"
+        android:layout_width="144dp"
+        android:layout_height="165dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="170dp"
+        android:src="@drawable/kl" />
 
+    <TextView
 
+        android:layout_width="match_parent"
+        android:layout_marginTop="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageviewkl"
+        android:id="@+id/appname"
+        android:text="Public Helper"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/state"
+        android:layout_below="@id/appname"
+        android:text="Kerala"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_marginTop="30dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2020-04-10156"
+        android:id="@+id/uniqueid"
+        android:textStyle="bold"
+        android:layout_below="@id/state"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dhamoddaran N"
+        android:textStyle="bold"
+        android:layout_below="@id/uniqueid"
+        android:id="@+id/fullstacker"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Samuel Raj , Reshma RS , Akshal Jasmine"
+        android:layout_below="@id/fullstacker"
+        android:id="@+id/supportteam"
+        android:gravity="center"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stella Mary's College of Engineering, Kanniyakumari"
+        android:layout_below="@id/supportteam"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:id="@+id/collegename"
+        />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Version 1.0"
+        android:textStyle="bold"
+        android:layout_below="@id/collegename"
+        android:gravity="center"
+        android:id="@+id/version"
+        />
 </RelativeLayout>

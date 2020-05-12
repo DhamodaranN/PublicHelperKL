@@ -6,10 +6,12 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -35,15 +37,15 @@ public class Tollfree extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tollfree);
+        Toast.makeText(getApplicationContext(),"please wait....",Toast.LENGTH_LONG).show();
         mQueue = Volley.newRequestQueue(this);
-
-        String url = "https://myfirstprojectsamuel.000webhostapp.com/helpline.json";
+        String url = "https://www.pico.games/publichelper/json/helpline.json";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
-                            Toast.makeText(getApplicationContext(),"please wait....",Toast.LENGTH_LONG).show();
+
                             final ListView listView = (ListView) findViewById(R.id.list_view);
                             listView.setClickable(true);
 
@@ -52,15 +54,27 @@ public class Tollfree extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject employee = jsonArray.getJSONObject(i);
                                 items.add(employee.getString("company"));
-
                             }
                             final ArrayAdapter<String> adapter;
                             adapter = new ArrayAdapter<String>(getApplicationContext(),
-                                    android.R.layout.simple_list_item_1, items);
+                                    android.R.layout.simple_list_item_1, items) {
+                                @Override
+                                public View getView(int position, View convertView, ViewGroup parent)
+                                {
+                                    View itemView = super.getView(position, convertView, parent);
+                                    if (getItem(position).contains(":"))
+                                        itemView.setBackgroundColor(Color.RED);
+
+                                    return itemView;
+                                }
+                            };
+
 
                             if (listView != null) {
                                 listView.setAdapter(adapter);
                             }
+
+
 
                             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -84,6 +98,18 @@ public class Tollfree extends AppCompatActivity {
                                         Intent callIntent = new Intent(Intent.ACTION_CALL);
                                         callIntent.setData(Uri.parse("tel:" + selectedFromList));
                                         startActivity(callIntent);
+                                    }
+                                    for(int i=0; i<parent.getChildCount(); i++)
+                                    {
+                                        if(i == position)
+                                        {
+                                            parent.getChildAt(i).setBackgroundColor(Color.BLUE);
+                                        }
+                                        else
+                                        {
+                                            parent.getChildAt(i).setBackgroundColor(Color.BLACK);
+                                        }
+
                                     }
                                 }
 
