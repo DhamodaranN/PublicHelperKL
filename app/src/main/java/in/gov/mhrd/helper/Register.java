@@ -70,7 +70,7 @@ private Spinner udistrict,ugender;
         uaddress = (EditText) findViewById(R.id.address);
         upincode = (EditText) findViewById(R.id.pincode);
 
-        btnregister = (Button) findViewById(R.id.btn_register);
+        btnregister = (Button) findViewById(R.id.btn_reg);
 
 
         btnregister.setOnClickListener(new View.OnClickListener() {
