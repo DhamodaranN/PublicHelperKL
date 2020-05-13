@@ -208,6 +208,18 @@
                 android:id="@+id/send"
                 android:text="Proceed to Pay"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"/></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+            <TextView
+
+                android:text="Note: if you get error in Google Pay try some other UPI Applications."
+                android:layout_width="match_parent"
+                android:textColor="@color/red"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>

@@ -23,7 +23,7 @@ private  Button button;
     }
 
     public void signuptxt(View view) {
-        Intent intent = new Intent(Login.this,Regiister.class);
+        Intent intent = new Intent(Login.this,Register.class);
         startActivity(intent);
     }
 
