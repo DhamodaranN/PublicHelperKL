@@ -5,7 +5,8 @@
     <string name="MoreInfoHeading">See Statewise And \nDistrictwise Statistics</string>
     <string name="number_of_cases_everyday">Graph: Number of cases</string>
     <string name="no_of_days_30th_jan_today">No of days (30th Jan - Today)</string>
-    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string> <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_student_page">StudentPage</string>
     <string name="nav_header_title">Android Studio</string>
