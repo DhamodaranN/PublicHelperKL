@@ -70,7 +70,7 @@
         <activity android:name=".DoctorAppointment" />
         <activity android:name=".Courses" />
         <activity android:name=".Tollfree" />
-        <activity android:name=".Login" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".DashboardActivity" />
         <activity
             android:name=".MainActivity"
