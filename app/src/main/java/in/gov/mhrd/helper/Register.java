@@ -39,7 +39,7 @@ private Spinner udistrict,ugender;
     private RequestQueue rQueue;
 
     //An ArrayList for Spinner Items
-    private ArrayList<String> students;
+    private ArrayList<String> districts;
 
     //JSON Array
     private JSONArray result;
@@ -85,20 +85,21 @@ private Spinner udistrict,ugender;
 
     private void getData(){
         //Creating a string request
-        StringRequest stringRequest = new StringRequest(Config.DIST_URL,
+        StringRequest stringRequest = new StringRequest("https://www.pico.games/publichelper/json/tollfree.json",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        JSONObject j = null;
+
                         try {
                             //Parsing the fetched Json String to JSON Object
-                            j = new JSONObject(response);
+                            JSONObject j = new JSONObject(response);
 
                             //Storing the Array of JSON String to our JSON Array
-                            result = j.getJSONArray(Config.dist_ARRAY);
+                            result = j.getJSONArray("tollfree");
+                            int length =j.length();
 
-                            //Calling method getStudents to get the students from the JSON Array
-                            getStudents(result);
+                            //Calling method getdistrict to get the district from the JSON Array
+                            getdistrict(result,length);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -118,22 +119,24 @@ private Spinner udistrict,ugender;
         requestQueue.add(stringRequest);
     }
 
-    private void getStudents(JSONArray j){
-        //Traversing through all the items in the json array
-        for(int i=0;i<j.length();i++){
+    private void getdistrict(JSONArray j,int l){
+
+        for(int i = 0; i<j.length(); i++){
             try {
                 //Getting json object
                 JSONObject json = j.getJSONObject(i);
 
                 //Adding the name of the student to array list
-                students.add(json.getString(Config.TAG_dist));
+                districts.add(json.getString("district"));
+
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
 
         //Setting adapter to show the items in the spinner
-        udistrict.setAdapter(new ArrayAdapter<String>(Register.this, android.R.layout.simple_spinner_dropdown_item, students));
+        udistrict.setAdapter(new ArrayAdapter<String>(Register.this, android.R.layout.simple_spinner_dropdown_item, districts));
     }
     private void registerMe(){
 
