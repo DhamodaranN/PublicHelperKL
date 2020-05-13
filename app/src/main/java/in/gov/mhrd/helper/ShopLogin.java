@@ -42,7 +42,7 @@ public class ShopLogin extends AppCompatActivity {
     }
 
     public void login(View view) {
-        Intent i = new Intent(ShopLogin.this, Shop_User_Dashboard.class);
+        Intent i = new Intent(ShopLogin.this, ShopUser_Dashboard.class);
         startActivity(i);
     }
 }

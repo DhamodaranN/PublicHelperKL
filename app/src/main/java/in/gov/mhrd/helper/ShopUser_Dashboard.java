@@ -16,12 +16,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Shop_User_Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ShopUser_Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_user_dashboard);
+        setContentView(R.layout.activity_shopuser__dashboard);
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -82,7 +82,7 @@ public class Shop_User_Dashboard extends AppCompatActivity implements Navigation
         int id = item.getItemId();
         switch (id){
             case R.id.mycart:
-                Intent i = new Intent(Shop_User_Dashboard.this,Mycart.class);
+                Intent i = new Intent(ShopUser_Dashboard.this,Mycart.class);
                 startActivity(i);
 
 
