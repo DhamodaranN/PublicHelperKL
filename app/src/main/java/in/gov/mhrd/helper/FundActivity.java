@@ -34,10 +34,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class FundActivity extends AppCompatActivity implements Spinner.OnItemSelectedListener{
-    EditText amountBox;
+    EditText amount;
     String name;
     GridLayout gl;
-    EditText amount, note;
+    EditText  note;
     TextView upivirtualid;
     Button send;
     String TAG ="main";
@@ -56,10 +56,9 @@ public class FundActivity extends AppCompatActivity implements Spinner.OnItemSel
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fund);
-        amountBox=(EditText)findViewById(R.id.amount);
+        amount=(EditText)findViewById(R.id.amount);
         gl=(GridLayout)findViewById(R.id.amountgroup);
         send = (Button) findViewById(R.id.send);
-        amount = (EditText)findViewById(R.id.amount);
         note = (EditText)findViewById(R.id.funddesc);
         upivirtualid =(TextView) findViewById(R.id.upi);
         students = new ArrayList<String>();
@@ -79,10 +78,14 @@ public class FundActivity extends AppCompatActivity implements Spinner.OnItemSel
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            name=spinner.getSelectedItem().toString();
-
-                    payUsingUpi(name, upivirtualid.getText().toString(),
-                            note.getText().toString(), amount.getText().toString());
+            name="Donation";
+               /* Intent intent = new Intent(FundActivity.this, fundpay_confirmation.class);
+                intent.putExtra("name", spinner.getSelectedItem().toString());
+                intent.putExtra("upi",upivirtualid.getText().toString().trim());
+                intent.putExtra("amount",amount.getText().toString().trim());
+                intent.putExtra("note",note.getText().toString().trim());
+                startActivity(intent);*/
+                  payUsingUpi(name, upivirtualid.getText().toString(),note.getText().toString(), amount.getText().toString());
 
 
             }
@@ -90,21 +93,21 @@ public class FundActivity extends AppCompatActivity implements Spinner.OnItemSel
     }
 
     public void load100(View view) {
-        amountBox.setText("100");
+        amount.setText("100");
         gl.setVisibility(View.GONE);
     }
     public void load500(View view) {
-        amountBox.setText("500");
+        amount.setText("500");
         gl.setVisibility(View.GONE);
 
     }
     public void load1000(View view) {
-        amountBox.setText("1000");
+        amount.setText("1000");
         gl.setVisibility(View.GONE);
 
     }
     public void load5000(View view) {
-        amountBox.setText("5000");
+        amount.setText("5000");
         gl.setVisibility(View.GONE);
 
     }
@@ -196,10 +199,11 @@ public class FundActivity extends AppCompatActivity implements Spinner.OnItemSel
     //UPI Codes
 
     void payUsingUpi(  String name,String upiId, String note, String amount) {
+        Toast.makeText(this,"name "+name +"--up--"+upiId+"--"+ note+"--"+amount,Toast.LENGTH_LONG).show();
         Log.e("main ", "name "+name +"--up--"+upiId+"--"+ note+"--"+amount);
         Uri uri = Uri.parse("upi://pay").buildUpon()
                 .appendQueryParameter("pa", upiId)
-                .appendQueryParameter("pn", name)
+                .appendQueryParameter("pn", "Dhamodaran")
                 //.appendQueryParameter("mc", "")
                 //.appendQueryParameter("tid", "02125412")
                 //.appendQueryParameter("tr", "25584584")

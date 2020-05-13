@@ -23,53 +23,8 @@ private  Button button;
     }
 
     public void signuptxt(View view) {
-        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                Login.this,R.style.BottomSheetDialogTheme
-        );
-
-        View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                R.layout.bottom_sheet_layout,
-                (LinearLayout)findViewById(R.id.linear)
-        );
-
-        bottomSheetView.findViewById(R.id.go).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        Login.this,R.style.BottomSheetStyle
-                );
-
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.otp_sheet,
-                        (LinearLayout)findViewById(R.id.otplayout)
-                );
-
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
-            }
-        });
-
-        bottomSheetView.findViewById(R.id.why).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        Login.this,R.style.BottomSheetStyle
-                );
-
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.why_isitneeded,
-                        (LinearLayout)findViewById(R.id.whyisit)
-                );
-
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
-
-            }
-        });
-        bottomSheetDialog.setContentView(bottomSheetView);
-        bottomSheetDialog.show();
-
+        Intent intent = new Intent(Login.this,DashboardActivity.class);
+        startActivity(intent);
     }
 
     public void login(View view) {
