@@ -15,7 +15,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fundpay_confirmation"></activity>
+        <activity android:name=".UserProfileedit" />
+        <activity android:name=".Mycart" />
+        <activity
+            android:name=".Shop_User_Dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddProducts" />
+        <activity
+            android:name=".Vendor_DashBoard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".VendorLogin" />
+        <activity android:name=".ShopRegister"></activity>
+        <activity android:name=".ShopLogin" />
+        <activity android:name=".Regiister" />
+        <activity android:name=".fundpay_confirmation" />
         <activity android:name=".MedicalStore" />
 
         <meta-data

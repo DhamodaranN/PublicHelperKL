@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_edit_black_24dp"
+            android:title="Edit Profile" />
+
+        <item
+            android:id="@+id/Remainder"
+            android:icon="@drawable/ic_add_alert_black_24dp"
+            android:title="My Remainder" />
+
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/myorders"
+                android:icon="@drawable/ic_my_cart_black_24dp"
+                android:title="My orders" />
+
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_settings_applications_black_24dp"
+                android:title="Settings" />
+            <item
+                android:id="@+id/favorites"
+                android:icon="@drawable/ic_favorite_black_24dp"
+                android:title="favorites" />
+            <item
+                android:id="@+id/Feedback"
+                android:icon="@drawable/ic_mail_black_24dp"
+                android:title="feedback" />
+        </menu>
+    </item>
+
+</menu>

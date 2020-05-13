@@ -56,4 +56,10 @@ public class DashboardActivity extends AppCompatActivity {
         Intent intent = new Intent(DashboardActivity.this,FundActivity.class);
         startActivity(intent);
     }
+
+    public void shop(View view) {
+        Intent intent = new Intent(DashboardActivity.this,ShopLogin.class);
+        startActivity(intent);
+
+    }
 }
