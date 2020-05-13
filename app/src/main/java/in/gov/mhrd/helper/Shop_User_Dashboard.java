@@ -21,7 +21,7 @@ public class Shop_User_Dashboard extends AppCompatActivity implements Navigation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shop_user__dashboard);
+        setContentView(R.layout.activity_shop_user_dashboard);
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
