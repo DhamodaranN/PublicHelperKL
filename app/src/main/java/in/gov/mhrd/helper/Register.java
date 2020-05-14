@@ -162,7 +162,21 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         rQueue.getCache().clear();
-                        Toast.makeText(Register.this,response,Toast.LENGTH_LONG).show();
+                        try {
+                            JSONObject json=new JSONObject(response);
+                            String status =  json.getString("status");
+                            String message =  json.getString("status");
+                            JSONArray data =  new JSONArray("data");
+                            if(Boolean.parseBoolean(status)){
+                                Toast.makeText(Register.this,message,Toast.LENGTH_LONG).show();
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
 
                         try {
 

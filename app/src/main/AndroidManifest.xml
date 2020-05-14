@@ -70,7 +70,8 @@
         <activity android:name=".Courses" />
         <activity android:name=".Tollfree" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
