@@ -40,7 +40,7 @@ public class UserDashboard extends AppCompatActivity {
     }
 
     public void migrantworker(View view) {
-        Intent i=new Intent(this, MigrantWorker.class);
+        Intent i=new Intent(this, MapsActivity.class);
         startActivity(i);
 
     }

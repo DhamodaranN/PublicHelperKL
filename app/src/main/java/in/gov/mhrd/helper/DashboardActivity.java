@@ -64,7 +64,7 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     public void migrant(View view) {
-        Intent intent = new Intent(DashboardActivity.this,MigrantWorker.class);
+        Intent intent = new Intent(DashboardActivity.this, MapsActivity.class);
         startActivity(intent);
 
     }

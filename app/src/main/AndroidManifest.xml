@@ -58,7 +58,6 @@
         <activity android:name=".Admin" />
         <activity android:name=".Fundraisers" />
         <activity android:name=".ReturnKerala" />
-        <activity android:name=".MigrantWorker" />
         <activity android:name=".People" />
         <activity android:name=".Patient" />
         <activity android:name=".HealthWorker" />

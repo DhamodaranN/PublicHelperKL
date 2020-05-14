@@ -33,13 +33,15 @@ public class Register extends AppCompatActivity {
     private EditText uname, uage, uusername, upassword,uconpassword,ucity,uaddress,upincode,umobile;
     private Button btnregister;
     private TextView tvlogin;
-private Spinner udistrict,ugender;
+    private Spinner udistrict,ugender;
     private PreferenceHelper preferenceHelper;
     private String registerURL = "https://pico.games/publichelper/scripts/register.php";
     private RequestQueue rQueue;
-
+    JSONObject j;
+    JSONObject json;
     //An ArrayList for Spinner Items
-    private ArrayList<String> districts;
+    private ArrayList<String> districts=new ArrayList<>();
+    private ArrayList<String> genderlist=new ArrayList<>();
 
     //JSON Array
     private JSONArray result;
@@ -62,7 +64,7 @@ private Spinner udistrict,ugender;
         uage = (EditText) findViewById(R.id.age);
         uusername = (EditText) findViewById(R.id.username);
         upassword = (EditText) findViewById(R.id.regpass);
-        upassword = (EditText) findViewById(R.id.regconpass);
+        uconpassword = (EditText) findViewById(R.id.regconpass);
         ugender = (Spinner) findViewById(R.id.gender);
         umobile = (EditText) findViewById(R.id.phone);
         udistrict = (Spinner) findViewById(R.id.district);
@@ -72,6 +74,10 @@ private Spinner udistrict,ugender;
 
         btnregister = (Button) findViewById(R.id.btn_reg);
 
+        genderlist.add("Male");
+        genderlist.add("Female");
+        genderlist.add("Others");
+        ugender.setAdapter(new ArrayAdapter<String>(Register.this, android.R.layout.simple_spinner_dropdown_item, genderlist));
 
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +98,7 @@ private Spinner udistrict,ugender;
 
                         try {
                             //Parsing the fetched Json String to JSON Object
-                            JSONObject j = new JSONObject(response);
+                            j = new JSONObject(response);
 
                             //Storing the Array of JSON String to our JSON Array
                             result = j.getJSONArray("tollfree");
@@ -120,11 +126,10 @@ private Spinner udistrict,ugender;
     }
 
     private void getdistrict(JSONArray j,int l){
-
-        for(int i = 0; i<j.length(); i++){
+        for(int i=0;i<j.length();i++){
             try {
                 //Getting json object
-                JSONObject json = j.getJSONObject(i);
+                json = j.getJSONObject(i);
 
                 //Adding the name of the student to array list
                 districts.add(json.getString("district"));
@@ -152,7 +157,7 @@ private Spinner udistrict,ugender;
         final String password = upassword.getText().toString();
         final String confirmpassword = uconpassword.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, registerURL,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, registerURL+"?name="+name+"&username="+username+"&age="+age+"&gender="+gender+"&mobile="+mobile+"&district="+district+"&city="+city+"&address="+address+"&password="+password+"&pincode="+pincode,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

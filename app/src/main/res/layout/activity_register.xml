@@ -4,9 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
-    android:layout_gravity="center"
-    android:gravity="center"
     tools:context=".Register">
 
 
@@ -14,17 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:layout_margin="15dp"
         android:background="#fff"
         >
 
+
         <ImageView
+            android:layout_gravity="center"
             android:id="@+id/imageView"
             android:layout_width="150dp"
             android:layout_height="149dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="40dp"
             android:src="@drawable/help" />
 
 
@@ -101,12 +98,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/district"
             />
-        <Spinner
-            android:layout_marginTop="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/taluk"
-            />
 
         <EditText
             android:layout_marginTop="10dp"
@@ -128,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Address"
-            android:inputType="number"/>
+            android:inputType="text"/>
 
 
 
@@ -149,7 +140,6 @@
             android:id="@+id/regconpass"
             android:hint="Confirm Password"
             android:inputType="textPassword" />
-
 
 
         <Button
@@ -173,6 +163,7 @@
             android:padding="15dp"
             android:onClick="loginview"
             android:text="Login"
+            android:layout_marginBottom="60dp"
             />
 
     </LinearLayout>
