@@ -9,8 +9,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -50,8 +52,11 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
             case R.id.settings:
                 break;
             case R.id.logout:
-                Intent in = new Intent(getApplicationContext(),LoginActivity.class);
-                startActivity(in);
+                Intent intent = new Intent(DashboardActivity.this, LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
         }
 

@@ -5,19 +5,24 @@
 
 
         <item
+            android:icon="@drawable/ic_edit_black_24dp"
             android:id="@+id/editprofile"
             android:title="Edit Profile" />
         <item
+            android:icon="@drawable/ic_record_voice_over_black_24dp"
             android:id="@+id/language"
             android:title="Language" />
 
             <item
+                android:icon="@drawable/ic_share_black_24dp"
                 android:id="@+id/share"
                 android:title="Share App" />
             <item
+                android:icon="@drawable/ic_settings_black_24dp"
                 android:id="@+id/settings"
                 android:title="Settings" />
             <item
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
                 android:id="@+id/logout"
                 android:title="Logout" />
 
