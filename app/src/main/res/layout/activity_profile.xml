@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="96dp"
+            android:layout_gravity="center"
+            android:layout_height="96dp"
+            android:src="@drawable/worker"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Samuel"
+            android:textSize="18dp"
+        android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Details"
+            android:layout_marginTop="20dp"/>
+
+
+        <TableLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TableRow>
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:id="@+id/mobile"
+                android:layout_height="wrap_content"
+                android:text="Mobile :"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7634648358357"
+                android:id="@+id/mobileview"
+                android:textSize="20dp"
+                />
+            </TableRow>
+            <TableRow>
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age :"
+                android:id="@+id/age"
+                android:textSize="20dp"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18"
+                android:id="@+id/ageView"
+                android:textSize="20dp"
+                />
+            </TableRow>
+            <TableRow>
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@+id/reg"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User ID : "
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="345324543"
+                android:textStyle="bold"
+                android:id="@+id/departView"
+                android:textSize="20dp"
+                />
+            </TableRow>
+
+        </TableLayout>
+        <TextView
+            android:layout_margin="20dp"
+            android:textSize="26dp"
+            android:drawableLeft="@drawable/ic_phone_black_24dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:background="#fff"
+            android:textColor="#F44336"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Call Doctor"/>
+        <TextView
+            android:layout_margin="20dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="previous visit details"/>
+        <TableLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prescription :"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attachments :"
+                    android:textSize="20dp"/>
+                <Button
+                    android:textStyle="bold"
+                    android:layout_marginRight="30dp"
+                    android:text="Attach files"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="0dp"
+                    android:layout_marginTop="20dp"
+
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date of visit : "
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor Name : "
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Privisinal Diagonasis : "
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medication : "
+                    android:textSize="20dp"/>
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NA"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    />
+            </TableRow> <TableRow>
+            <TextView
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Advice : "
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_weight="1"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NA"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                />
+        </TableRow>
+
+
+        </TableLayout>
+    </LinearLayout>
+</ScrollView>

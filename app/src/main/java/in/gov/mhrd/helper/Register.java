@@ -2,6 +2,7 @@ package in.gov.mhrd.helper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 
@@ -133,6 +134,8 @@ public class Register extends AppCompatActivity {
         udistrict.setAdapter(new ArrayAdapter<String>(Register.this, android.R.layout.simple_spinner_dropdown_item, districts));
     }
     private void registerMe(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please Wait..");
 
         final String name = uname.getText().toString();
         final String username = uusername.getText().toString();
@@ -152,6 +155,7 @@ public class Register extends AppCompatActivity {
                     public void onResponse(String response) {
                         rQueue.getCache().clear();
                         try {
+                            progressDialog.dismiss();
                             JSONObject json=new JSONObject(response);
                             Boolean status =  json.optBoolean("status");
                             String message =  json.getString("message");
@@ -169,8 +173,10 @@ public class Register extends AppCompatActivity {
                     }
                 },
                 new Response.ErrorListener() {
+
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
                         Toast.makeText(Register.this,error.toString(),Toast.LENGTH_LONG).show();
                     }
                 }){

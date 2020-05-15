@@ -54,7 +54,9 @@ public class PreferenceHelper {
     void putUsage(Boolean usage) {
         SharedPreferences.Editor edit = app_prefs.edit();
         edit.putBoolean(USAGE, usage);
-        edit.apply();
+        edit.commit();
     }
-    boolean getIsUsage() {        return app_prefs.getBoolean(USAGE,false);    }
+    boolean getIsUsage() {
+        putUsage(true);
+        return app_prefs.getBoolean(USAGE,false);    }
 }
