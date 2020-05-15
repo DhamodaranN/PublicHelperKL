@@ -3,9 +3,7 @@ package in.gov.mhrd.helper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,8 +25,6 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etUname, etPass;
-    private Button btnlogin;
-    private TextView tvreg;
     private PreferenceHelper preferenceHelper;
 
     private String URLline = "https://pico.games/publichelper/scripts/login.php";
@@ -43,8 +39,6 @@ public class LoginActivity extends AppCompatActivity {
 
         etUname = (EditText) findViewById(R.id.logphone);
         etPass = (EditText) findViewById(R.id.logpassword);
-
-        btnlogin = (Button) findViewById(R.id.btn_login);
 
     }
 
@@ -105,7 +99,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void saveInfo(String response){
 
-        preferenceHelper.putIsLogin(true);
+
+
         try {
             JSONObject jsonObject = new JSONObject(response);
             if (jsonObject.getString("status").equals("true")) {
@@ -114,7 +109,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     JSONObject dataobj = dataArray.getJSONObject(i);
                     preferenceHelper.putName(dataobj.getString("name"));
-                    preferenceHelper.putHobby(dataobj.getString("hobby"));
+                    preferenceHelper.putMobile(dataobj.getString("mobile"));
+                    preferenceHelper.putID(dataobj.getString("id"));
+                    preferenceHelper.putIsLogin(true);
+                    preferenceHelper.putUsage(true);
                 }
             }
         } catch (JSONException e) {

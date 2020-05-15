@@ -49,17 +49,6 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        preferenceHelper = new PreferenceHelper(this);
-
-        if(preferenceHelper.getIsLogin()){
-            Intent intent = new Intent(Register.this,DashboardActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            this.finish();
-        }
-
-
         uname = (EditText) findViewById(R.id.name);
         uage = (EditText) findViewById(R.id.age);
         uusername = (EditText) findViewById(R.id.username);
@@ -164,23 +153,14 @@ public class Register extends AppCompatActivity {
                         rQueue.getCache().clear();
                         try {
                             JSONObject json=new JSONObject(response);
-                            String status =  json.getString("status");
-                            String message =  json.getString("status");
+                            Boolean status =  json.optBoolean("status");
+                            String message =  json.getString("message");
                             JSONArray data =  new JSONArray("data");
-                            if(Boolean.parseBoolean(status)){
+                            if(status){
+                                parseData(response);
                                 Toast.makeText(Register.this,message,Toast.LENGTH_LONG).show();
                             }
 
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-
-
-                        try {
-
-                            parseData(response);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -236,8 +216,6 @@ public class Register extends AppCompatActivity {
     }
 
     private void saveInfo(String response){
-
-        preferenceHelper.putIsLogin(true);
         try {
             JSONObject jsonObject = new JSONObject(response);
             if (jsonObject.getString("status").equals("true")) {
@@ -246,7 +224,11 @@ public class Register extends AppCompatActivity {
 
                     JSONObject dataobj = dataArray.getJSONObject(i);
                     preferenceHelper.putName(dataobj.getString("name"));
-                    preferenceHelper.putHobby(dataobj.getString("hobby"));
+                    preferenceHelper.putID(dataobj.getString("id"));
+                    preferenceHelper.putMobile(dataobj.getString("mobile"));
+                    preferenceHelper.putIsLogin(true);
+                    preferenceHelper.putUsage(true);
+
                 }
             }
         } catch (JSONException e) {

@@ -1,50 +1,60 @@
 package in.gov.mhrd.helper;
 
-/**
-
- */
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class PreferenceHelper {
 
-    private final String INTRO = "intro";
+    private static final String USAGE ="usage" ;
+    private final String ID="userid" ;
     private final String NAME = "name";
-    private final String HOBBY = "hobby";
+    private final String MOBILE = "mobile";
+    private final String LOGIN = "login";
+
     private SharedPreferences app_prefs;
-    private Context context;
 
-    public PreferenceHelper(Context context) {
-        app_prefs = context.getSharedPreferences("shared",
+    PreferenceHelper(Context context) {
+        app_prefs = context.getSharedPreferences("publichelper",
                 Context.MODE_PRIVATE);
-        this.context = context;
     }
 
-    public void putIsLogin(boolean loginorout) {
+    void putIsLogin(Boolean login) {
         SharedPreferences.Editor edit = app_prefs.edit();
-        edit.putBoolean(INTRO, loginorout);
-        edit.commit();
+        edit.putBoolean(LOGIN, login);
+        edit.apply();
     }
-    public boolean getIsLogin() {
-        return app_prefs.getBoolean(INTRO, false);
+    boolean getIsLogin() {
+        return app_prefs.getBoolean(LOGIN, false);
     }
 
-    public void putName(String loginorout) {
+    void putName(String name) {
         SharedPreferences.Editor edit = app_prefs.edit();
-        edit.putString(NAME, loginorout);
-        edit.commit();
+        edit.putString(NAME, name);
+        edit.apply();
     }
     public String getName() {
         return app_prefs.getString(NAME, "");
     }
 
-    public void putHobby(String loginorout) {
+    void putMobile(String mobile) {
         SharedPreferences.Editor edit = app_prefs.edit();
-        edit.putString(HOBBY, loginorout);
-        edit.commit();
+        edit.putString(MOBILE, mobile);
+        edit.apply();
     }
-    public String getHobby() {
-        return app_prefs.getString(HOBBY, "");
+    public String getMobile() {
+        return app_prefs.getString(MOBILE, "");
     }
+    void putID(String id) {
+        SharedPreferences.Editor edit = app_prefs.edit();
+        edit.putString(ID, id);
+        edit.apply();
+    }
+    public String getID() {        return app_prefs.getString(ID, "");    }
 
- }
+    void putUsage(Boolean usage) {
+        SharedPreferences.Editor edit = app_prefs.edit();
+        edit.putBoolean(USAGE, usage);
+        edit.apply();
+    }
+    boolean getIsUsage() {        return app_prefs.getBoolean(USAGE,false);    }
+}
