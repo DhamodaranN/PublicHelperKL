@@ -1,6 +1,8 @@
 package in.gov.mhrd.helper;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -25,7 +27,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etUname, etPass;
-    private PreferenceHelper preferenceHelper;
+     SharedPreferences mypreferences;
 
     private String URLline = "https://pico.games/publichelper/scripts/login.php";
     private RequestQueue rQueue;
@@ -35,7 +37,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        preferenceHelper = new PreferenceHelper(this);
+        mypreferences = getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =mypreferences.edit();
 
         etUname = (EditText) findViewById(R.id.logphone);
         etPass = (EditText) findViewById(R.id.logpassword);
@@ -108,11 +111,14 @@ public class LoginActivity extends AppCompatActivity {
                 for (int i = 0; i < dataArray.length(); i++) {
 
                     JSONObject dataobj = dataArray.getJSONObject(i);
-                    preferenceHelper.putName(dataobj.getString("name"));
-                    preferenceHelper.putMobile(dataobj.getString("mobile"));
-                    preferenceHelper.putID(dataobj.getString("id"));
-                    preferenceHelper.putIsLogin(true);
-                    preferenceHelper.putUsage(true);
+                    SharedPreferences.Editor editor = mypreferences.edit();
+
+
+                    editor.putString("login",dataobj.getString("name"));
+                    editor.putString("login",dataobj.getString("mobile"));
+                    editor.putString("login",dataobj.getString("id"));
+                    editor.putBoolean("login",true);
+                    editor.putBoolean("usage",true);
                 }
             }
         } catch (JSONException e) {

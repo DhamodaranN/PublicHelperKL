@@ -3,6 +3,7 @@ package in.gov.mhrd.helper;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
@@ -35,7 +36,7 @@ public class Register extends AppCompatActivity {
     private Button btnregister;
     private TextView tvlogin;
     private Spinner udistrict,ugender;
-    private PreferenceHelper preferenceHelper;
+  SharedPreferences mypreferences;
     private String registerURL = "https://pico.games/publichelper/scripts/register.php";
     private RequestQueue rQueue;
     JSONObject j;
@@ -43,7 +44,6 @@ public class Register extends AppCompatActivity {
     //An ArrayList for Spinner Items
     private ArrayList<String> districts=new ArrayList<>();
     private ArrayList<String> genderlist=new ArrayList<>();
-
     //JSON Array
     private JSONArray result;
     @Override
@@ -229,11 +229,12 @@ public class Register extends AppCompatActivity {
                 for (int i = 0; i < dataArray.length(); i++) {
 
                     JSONObject dataobj = dataArray.getJSONObject(i);
-                    preferenceHelper.putName(dataobj.getString("name"));
-                    preferenceHelper.putID(dataobj.getString("id"));
-                    preferenceHelper.putMobile(dataobj.getString("mobile"));
-                    preferenceHelper.putIsLogin(true);
-                    preferenceHelper.putUsage(true);
+                    SharedPreferences.Editor edit =mypreferences.edit();
+                    edit.putString("login",dataobj.getString("name"));
+                    edit.putString("login",dataobj.getString("id"));
+                    edit.putString("login",dataobj.getString("mobile"));
+                    edit.putBoolean("login",true);
+                    edit.putBoolean("usage",true);
 
                 }
             }
