@@ -1,5 +1,6 @@
 package in.gov.mhrd.helper;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText etUname, etPass;
      SharedPreferences mypreferences;
+     ProgressDialog progressDialog;
 
     private String URLline = "https://pico.games/publichelper/scripts/login.php";
     private RequestQueue rQueue;
@@ -50,11 +52,12 @@ public class LoginActivity extends AppCompatActivity {
         final String username = etUname.getText().toString().trim();
         final String password = etPass.getText().toString().trim();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLline,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URLline+"?username="+username+"&password="+password,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         rQueue.getCache().clear();
+
                         Toast.makeText(LoginActivity.this,response, Toast.LENGTH_LONG).show();
                         parseData(response);
 
@@ -87,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
             if (jsonObject.getString("status").equals("true")) {
 
                 saveInfo(response);
-
+                progressDialog.dismiss();
                 Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this,DashboardActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -119,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("login",dataobj.getString("id"));
                     editor.putBoolean("login",true);
                     editor.putBoolean("usage",true);
+                    editor.commit();
                 }
             }
         } catch (JSONException e) {
@@ -127,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view) {
+        progressDialog = ProgressDialog.show(LoginActivity.this,"Connect with server","Please Wait",false,false);
         loginUser();
     }
 
