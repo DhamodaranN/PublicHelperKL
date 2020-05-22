@@ -12,6 +12,7 @@
     <ImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
+        android:id="@+id/displayimage"
         android:src="@drawable/circlehelp" />
 
     <TextView
@@ -20,12 +21,14 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:textColor="#000"
-        android:text="Samuel"
+        android:id="@+id/displayname"
+        android:text=""
         android:textSize="18dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="id: 756437568347"
+    android:id="@+id/displayid"
+    android:text=""
     android:textColor="#000"/>
 </LinearLayout>

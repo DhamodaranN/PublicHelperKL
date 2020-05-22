@@ -30,7 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUname, etPass;
      SharedPreferences mypreferences;
      ProgressDialog progressDialog;
+    JSONObject dataobj;
 
+     JSONArray dataArray;
     private String URLline = "https://pico.games/publichelper/scripts/login.php";
     private RequestQueue rQueue;
 
@@ -58,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         rQueue.getCache().clear();
 
-                        Toast.makeText(LoginActivity.this,response, Toast.LENGTH_LONG).show();
+
                         parseData(response);
 
                     }
@@ -93,9 +95,16 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(LoginActivity.this,DashboardActivity.class);
+
+                intent.putExtra("id",dataobj.getString("id"));
+                intent.putExtra("name",dataobj.getString("name"));
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
                 this.finish();
+            }else{
+
+                progressDialog.dismiss();
+                Toast.makeText(LoginActivity.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -110,16 +119,16 @@ public class LoginActivity extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(response);
             if (jsonObject.getString("status").equals("true")) {
-                JSONArray dataArray = jsonObject.getJSONArray("data");
+                 dataArray = jsonObject.getJSONArray("data");
                 for (int i = 0; i < dataArray.length(); i++) {
 
-                    JSONObject dataobj = dataArray.getJSONObject(i);
+                     dataobj = dataArray.getJSONObject(i);
                     SharedPreferences.Editor editor = mypreferences.edit();
 
 
-                    editor.putString("login",dataobj.getString("name"));
-                    editor.putString("login",dataobj.getString("mobile"));
-                    editor.putString("login",dataobj.getString("id"));
+                    editor.putString("name",dataobj.getString("name"));
+                    editor.putString("mobile",dataobj.getString("mobile"));
+                    editor.putString("id",dataobj.getString("id"));
                     editor.putBoolean("login",true);
                     editor.putBoolean("usage",true);
                     editor.commit();

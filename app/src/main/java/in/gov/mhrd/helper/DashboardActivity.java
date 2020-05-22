@@ -8,31 +8,44 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
 public class DashboardActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
+    SharedPreferences mypreferences;
     private DrawerLayout drawer;
+    TextView dpname,dpid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Bundle bundle = getIntent().getExtras();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-
+        mypreferences=getSharedPreferences("settings", Context.MODE_PRIVATE);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.userdashdrawer_layout);
         NavigationView navigationView = findViewById(R.id.userdashnav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View header=navigationView.getHeaderView(0);
+        /*View view=navigationView.inflateHeaderView(R.layout.nav_header_main);*/
+        dpname = (TextView)header.findViewById(R.id.displayname);
+        dpid = (TextView)header.findViewById(R.id.displayid);
 
+        navigationView.setNavigationItemSelectedListener(this);
+        dpname.setText(bundle.getString("name"));
+        dpid.setText(bundle.getString("id"));
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -56,6 +69,9 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                SharedPreferences.Editor edit=mypreferences.edit();
+                edit.putBoolean("login",false);
+                edit.apply();
                 startActivity(intent);
                 break;
         }

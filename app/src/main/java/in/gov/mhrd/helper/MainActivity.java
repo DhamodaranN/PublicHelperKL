@@ -24,6 +24,8 @@ SharedPreferences mypreferences;
                 if(mypreferences.getBoolean("usage",false)){
                     if(mypreferences.getBoolean("login",false)){
                         Intent intent = new Intent(MainActivity.this,DashboardActivity.class);
+                        intent.putExtra("id",mypreferences.getString("id","000000000"));
+                        intent.putExtra("name",mypreferences.getString("name","Public Helper"));
                         startActivity(intent);
                         finish();
 

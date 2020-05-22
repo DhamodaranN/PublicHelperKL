@@ -34,6 +34,8 @@ import java.util.Map;
 
 public class Register extends AppCompatActivity {
     ProgressDialog progressDialog;
+     JSONArray dataArray;
+     JSONObject dataobj;
     private EditText uname, uage, uusername, upassword,uconpassword,ucity,uaddress,upincode,umobile;
     private Button btnregister;
     private TextView tvlogin;
@@ -185,8 +187,6 @@ public class Register extends AppCompatActivity {
             try {
                 //Getting json object
                 json = j.getJSONObject(i);
-
-                //Adding the name of the student to array list
                 districts.add(json.getString("district"));
 
 
@@ -205,16 +205,18 @@ public class Register extends AppCompatActivity {
 
         JSONObject jsonObject = new JSONObject(response);
         if (jsonObject.optString("status").equals("true")){
-
             saveInfo(response);
             progressDialog.dismiss();
             Toast.makeText(Register.this, "Registered Successfully!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Register.this,DashboardActivity.class);
+            intent.putExtra("id",dataobj.getString("id"));
+            intent.putExtra("name",dataobj.getString("name"));
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             this.finish();
         }else {
 
+            progressDialog.dismiss();
             Toast.makeText(Register.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
         }
     }
@@ -223,14 +225,14 @@ public class Register extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(response);
             if (jsonObject.getString("status").equals("true")) {
-                JSONArray dataArray = jsonObject.getJSONArray("data");
+                 dataArray = jsonObject.getJSONArray("data");
                 for (int i = 0; i < dataArray.length(); i++) {
 
-                    JSONObject dataobj = dataArray.getJSONObject(i);
+                     dataobj = dataArray.getJSONObject(i);
                     SharedPreferences.Editor edit =mypreferences.edit();
-                    edit.putString("login",dataobj.getString("name"));
-                    edit.putString("login",dataobj.getString("id"));
-                    edit.putString("login",dataobj.getString("mobile"));
+                    edit.putString("name",dataobj.getString("name"));
+                    edit.putString("id",dataobj.getString("id"));
+                    edit.putString("mobile",dataobj.getString("mobile"));
                     edit.putBoolean("login",true);
                     edit.putBoolean("usage",true);
                     edit.commit();
