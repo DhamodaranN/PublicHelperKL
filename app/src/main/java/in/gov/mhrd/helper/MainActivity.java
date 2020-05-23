@@ -13,6 +13,11 @@ import android.preference.PreferenceManager;
 public class MainActivity extends AppCompatActivity {
 SharedPreferences mypreferences;
     @Override
+    public void onStop() {
+        super.onStop();
+         finish();
+    }
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

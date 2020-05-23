@@ -19,456 +19,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <GridLayout
-            android:columnCount="3"
-            android:rowCount="4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                android:onClick="toolfree"
-                android:layout_width="100dp"
-                android:layout_gravity="center"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/phone"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Help Line"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:onClick="courses"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/books_50px"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Free Courses"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:onClick="virus"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/coronavirus"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Corona Cases"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:onClick="appointment"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/medic"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Appointment"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:onClick="medreq"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/doctors_bag_50px"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="medicine "
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:layout_width="100dp"
-                android:onClick="addfund"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/cash_in_hand_50px"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Add Fund "
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:onClick="medreq"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/receive_cash_50px"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Donate"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:onClick="hospitals"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/hospital_bed_480px_1"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hospitals"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:onClick="medicalshops"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/doctors_bag_50px"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pharmacy"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:onClick="shop"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/icons8_shopping_cart_500px_2"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Shop Now"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:onClick="migrant"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/worker"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="migrant worker"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:onClick="shelters"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                app:cardElevation="12dp"
-                android:background="#fff"
-                app:cardCornerRadius="20dp"
-                android:layout_margin="12dp"
-
-                >
-                <LinearLayout
-                    android:background="#fff"
-                    android:gravity="center"
-                    android:padding="0dp"
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/icons8_home_address_500px"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"/>
-
-                    <TextView
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Shelters"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="#6f6f6f" />
-
-                </LinearLayout>
-
-
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
-    </LinearLayout>
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/userdashdrawer_layout"
         android:layout_width="match_parent"
@@ -484,7 +35,474 @@
             app:menu="@menu/drawer_dashusermenu" />
 
     </androidx.drawerlayout.widget.DrawerLayout>
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="toolfree"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Help Line"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="courses"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/books_50px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free Courses"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="virus"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/coronavirus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Corona Cases"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="appointment"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/medic" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Appointment"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="medreq"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/doctors_bag_50px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="medicine "
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="addfund"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/cash_in_hand_50px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Add Fund "
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="medreq"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/receive_cash_50px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Donate"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="hospitals"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/hospital_bed_480px_1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Hospitals"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="medicalshops"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/doctors_bag_50px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pharmacy"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="shop"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/icons8_shopping_cart_500px_2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Shop Now"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="migrant"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/worker" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="migrant worker"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="12dp"
+                android:background="#fff"
+                android:onClick="shelters"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/icons8_home_address_500px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Shelters"
+                        android:textColor="#6f6f6f"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+    </LinearLayout>
 
 
 
