@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("id",dataobj.getString("id"));
                     editor.putBoolean("login",true);
                     editor.putBoolean("usage",true);
-                    editor.commit();
+                    editor.apply();
                 }
             }
         } catch (JSONException e) {

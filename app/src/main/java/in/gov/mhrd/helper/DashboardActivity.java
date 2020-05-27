@@ -136,7 +136,7 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
     }
 
     public void migrant(View view) {
-        Intent intent = new Intent(DashboardActivity.this, MapsActivity.class);
+        Intent intent = new Intent(DashboardActivity.this, migrantDashboard.class);
         startActivity(intent);
 
     }

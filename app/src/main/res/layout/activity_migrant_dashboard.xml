@@ -14,10 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40sp"
-        android:text="add migrant worker"/>
+        android:onClick="add"
+
+        android:text="add migrant worker" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="40sp"
+        android:onClick="displaylist"
         android:text="view migrant workers"/>
 </LinearLayout>

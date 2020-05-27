@@ -6,6 +6,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 
@@ -31,11 +33,14 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class Register extends AppCompatActivity {
     ProgressDialog progressDialog;
      JSONArray dataArray;
      JSONObject dataobj;
+    String username=new String();
+    Boolean statuscheck=new Boolean(true);
     private EditText uname, uage, uusername, upassword,uconpassword,ucity,uaddress,upincode,umobile;
     private Button btnregister;
     private TextView tvlogin;
@@ -73,7 +78,32 @@ public class Register extends AppCompatActivity {
         genderlist.add("Female");
         genderlist.add("Others");
         ugender.setAdapter(new ArrayAdapter<String>(Register.this, android.R.layout.simple_spinner_dropdown_item, genderlist));
+        uname.addTextChangedListener(new TextChangedListener<EditText>(uname) {
+            @Override
+            public void onTextChanged(EditText target, Editable s) {
+                 username=uname.getText().toString().replaceAll("\\s", "").toLowerCase();
+                uusername.setText(username);
 
+            }
+        });
+        uname.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if (hasFocus) {
+
+                } else {
+                    checkusername(username);
+                }
+            }
+        });
+       /* uage.addTextChangedListener(new TextChangedListener<EditText>(uage) {
+            @Override
+            public void onTextChanged(EditText target, Editable s) {
+                // username=uname.getText().toString().replaceAll("\\s", "").toLowerCase();
+
+
+            }
+        });*/
         btnregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +111,7 @@ public class Register extends AppCompatActivity {
                 final String name = uname.getText().toString();
                 final String username = uusername.getText().toString();
                 final String age = uage.getText().toString();
-                final String gender = ugender.getSelectedItem().toString();
+                final int gender = ugender.getSelectedItemPosition();
                 final String district = udistrict.getSelectedItem().toString();
                 final String mobile = umobile.getText().toString();
                 final String city = ucity.getText().toString();
@@ -116,6 +146,7 @@ public class Register extends AppCompatActivity {
 
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                progressDialog.dismiss();
                                 Toast.makeText(Register.this,error.toString(),Toast.LENGTH_LONG).show();
                             }
                         }){
@@ -125,7 +156,7 @@ public class Register extends AppCompatActivity {
                         params.put("name",name);
                         params.put("usename",username);
                         params.put("age",age);
-                        params.put("gender",gender);
+                        params.put("gender",Integer.toString(gender));
                         params.put("mobile",mobile);
                         params.put("district",district);
                         params.put("address",address);
@@ -144,6 +175,52 @@ public class Register extends AppCompatActivity {
         });
 
         getData();
+    }
+
+    private void checkusername(final String username) {
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://pico.games/publichelper/scripts/checkusername.php?username="+username,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        rQueue.getCache().clear();
+                        try {
+                            JSONObject json=new JSONObject(response);
+                             statuscheck =  json.optBoolean("status");
+
+                            if(!statuscheck){
+                                String usern =  json.getString("username");
+                                uusername.setText(usern);
+                                System.out.println(usern);
+                            }else {
+                                uusername.setText(username);
+
+                                System.out.println(username);
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(Register.this,error.toString(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                return params;
+            }
+
+        };
+        rQueue = Volley.newRequestQueue(Register.this);
+        rQueue.add(stringRequest);
     }
 
     private void getData(){
@@ -250,4 +327,24 @@ public class Register extends AppCompatActivity {
         startActivity(intent);
         Register.this.finish();
     }
+}
+abstract class TextChangedListener<T> implements TextWatcher {
+    private T target;
+
+    public TextChangedListener(T target) {
+        this.target = target;
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        this.onTextChanged(target, s);
+    }
+
+    public abstract void onTextChanged(T target, Editable s);
 }
